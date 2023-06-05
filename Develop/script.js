@@ -4,47 +4,52 @@ var uppercaseCharacters = [  'A',  'B',  'C',  'D',  'E',  'F',  'G',  'H',  'I'
 var lowercaseCharacters = [  'a',  'b',  'c',  'd',  'e',  'f',  'g',  'h',  'i',  'j',  'k',  'l',  'm',  'n',  'o',  'p',  'q',  'r',  's',  't',  'u',  'v','w',  'x',  'y',  'z'];
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialCharacters = ['@',  '%',  '+',  '\\',  '/',  "'",  '!',  '#',  '$',  '^',  '?',  ':',  ',',  ')',  '(',  '}',  '{',  ']',  '[',  '~',  '-',  '_',  '.'];
+var allCharacters = [];
 
 
 console.log(lowercaseCharacters)
 console.log(uppercaseCharacters)
 console.log(numericCharacters)
 console.log(specialCharacters)
-
-
+console.log(allCharacters)
 
 
 var generatePassword = function() {
   var computerChoice = [];
-  var allCharacters = [];
-  var passwordLength =  document.getElementById('passwordlength').value
-  console.log(passwordLength + "TextArea Value")
-  console.log(allCharacters)
+
+
   var condition = true
   
-  //var uppercase = window.confirm("Include Upper Case Characters?");
-  //var lowercase = window.confirm("Include Lower Case Characters?");
-  //var numeric = window.confirm("Include Numeric Characters?");
-  //var special = window.confirm("Include Special Characters?");
+  do {
+    var passwordLength = parseInt(window.prompt("How many characters would you like your password to contain 8 - 128 ?", ""), 10);
+    console.log(passwordLength +" passwordLength")
 
-console.log(document.getElementById('upperCase').checked);
-console.log(document.getElementById('lowerCase').checked);
-console.log(document.getElementById('numeric').checked);
-console.log(document.getElementById('special').checked);
-  if (document.getElementById('upperCase').checked){
+    
+  }
+  while(isNaN(passwordLength) || passwordLength > 128 || passwordLength < 8);
+
+  
+
+  var uppercase = window.confirm("Include Upper Case Characters?");
+  var lowercase = window.confirm("Include Lower Case Characters?");
+  var numeric = window.confirm("Include Numeric Characters?");
+  var special = window.confirm("Include Special Characters?");
+
+
+  if (uppercase){
     allCharacters = allCharacters.concat(uppercaseCharacters);
     console.log(allCharacters + " uppercase");
   }
   if 
-  (document.getElementById('lowerCase').checked) {
+  (lowercase) {
     allCharacters = allCharacters.concat(lowercaseCharacters);
     console.log(allCharacters + " lowercase")
   }
-  if (document.getElementById('numeric').checked) {
+  if (numeric) {
     allCharacters = allCharacters.concat(numericCharacters);
     console.log(allCharacters + " numeric")
   }
-  if (document.getElementById('special').checked) {
+  if (special) {
     allCharacters = allCharacters.concat(specialCharacters);
     console.log(allCharacters + " special")
   }
@@ -54,11 +59,6 @@ console.log(document.getElementById('special').checked);
     computerChoice = computerChoice.concat(allCharacters[index]);
   }
 
-  if (allCharacters.length === 0) {
-    alert("Minimum of one option need to be selected");
-    console.log(computerChoice);
-    return computerChoice = "Password Not Generated";
-  }
   // Enabling a disabled button to enable it again 
   document.querySelector('#copy').disabled = false;
   
