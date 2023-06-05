@@ -6,10 +6,10 @@ All password are randomly created and not stored on any DB.
 This project is mainly focused on showing up my skills in JS and HTML coding, and to improve on it as I progress through my learning journey.
 
 ## GitHub Repo URL
-https://github.com/AllenHirmiz/
+https://github.com/AllenHirmiz/Password-Generator-JS
 
 ## Website URL
-https://allenhirmiz.github.io/
+https://allenhirmiz.github.io/Password-Generator-JS/Develop/
 
 ## Table of Contents
 Header

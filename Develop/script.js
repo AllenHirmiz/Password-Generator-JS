@@ -23,10 +23,12 @@ var generatePassword = function() {
   do {
     var passwordLength = parseInt(window.prompt("How many characters would you like your password to contain 8 - 128 ?", ""), 10);
     console.log(passwordLength +" passwordLength")
-
-    
+    if(passwordLength == "null" || passwordLength == null || passwordLength == "" ) {
+      console.log(passwordLength +" Null passwordLength")
+    } 
   }
   while(isNaN(passwordLength) || passwordLength > 128 || passwordLength < 8);
+
 
   
 
